@@ -3,7 +3,8 @@ import { useState } from "react";
 
 const PlayerCard = ({ name, img, statistics }) => {
   const [showImage, setShowImage] = useState(true);
-  const handleClick = () => setShowImage(!showImage);
+  const handleClick = () => { setShowImage(!showImage);
+    showImage && setTimeout(()=>setShowImage(true), 2000)}
   return (
     <Card
       onClick={handleClick}
