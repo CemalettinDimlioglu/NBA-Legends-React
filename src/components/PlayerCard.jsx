@@ -3,13 +3,16 @@ import { useState } from "react";
 
 const PlayerCard = ({ name, img, statistics }) => {
   const [showImage, setShowImage] = useState(true);
-  const handleClick = () => { setShowImage(!showImage);
-    showImage && setTimeout(()=>setShowImage(true), 2000)}
+  const handleClick = () => { 
+    setShowImage(!showImage);
+    showImage && setTimeout(()=>setShowImage(true), 2000)
+  }
   return (
     <Card
       onClick={handleClick}
       className="rounded-2 m-auto player-card"
       role="button"
+      
     >
 
     {showImage ? (<Card.Img variant="top" src={img} className="player-logo" /> ):(<ul className="m-auto" >
